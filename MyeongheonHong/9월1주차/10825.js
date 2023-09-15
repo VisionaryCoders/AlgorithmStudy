@@ -14,7 +14,6 @@ function getTestCase() {
       if (index > 0) element = Number(element);
       return element;
     });
-    // console.log(array);
   });
 
   return inputTestCase;
