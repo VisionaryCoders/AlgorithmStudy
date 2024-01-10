@@ -1,3 +1,5 @@
+// URL : https://www.acmicpc.net/problem/1339
+
 const fs = require('fs')
 
 const filePath = process.platform === 'linux' ? '/dev/stdin' : '../../input.txt'
@@ -20,7 +22,7 @@ const [N, inputs] = [
 function solution() {
   inputs.sort((a, b) => b.length - a.length)
 
-  const map = new Map()
+  let map = new Map()
 
   inputs.map((input) => {
     input.split('').map((char) => {
@@ -28,21 +30,25 @@ function solution() {
     })
   })
 
-  let sum = ''
-  let count = 9
-
   for (let i = inputs[0].length; i > 0; i--) {
-    sum = sum + '0'
     for (let j = 0; j < inputs.length; j++) {
       if (inputs[j].length === i) {
-        map.get(inputs[j][0]) === 0 && map.set(inputs[j][0], count--)
-        sum = String(Number(sum) + Number(map.get(inputs[j][0])))
-
+        const alphaSum = map.get(inputs[j][0])
+        alphaSum === 0 ? map.set(inputs[j][0], Math.pow(10, i - 1)) : map.set(inputs[j][0], alphaSum + Math.pow(10, i - 1))
         inputs[j] = inputs[j].substring(1)
       }
     }
   }
-  return Number(sum.substring())
+
+  const sortedMap = Array.from(map.entries()).sort((a, b) => b[1] - a[1])
+
+  let sum = 0
+  let count = 9
+  sortedMap.forEach((num) => {
+    sum += num[1] * count--
+  })
+
+  return sum
 }
 
 console.log(solution())
