@@ -18,7 +18,7 @@
 
 ## 👨🏻‍💻 각자의 다짐
 
-- 👀 명헌 : 성준이와 내가 하나님안에서 비전있는 개발자로 거듭날 수 있기를.
+- 👀 명헌 : 성준이와 내가 비전있는 개발자로 거듭날 수 있기를.
 - 👀 성준 : 코딩실력과 협업의 능력까지 성장할 수 있는 시간이 되기를.
 
 <img src="https://mblogthumb-phinf.pstatic.net/MjAxNzAxMTZfMTk1/MDAxNDg0NTI5OTA1OTEw.V5nZ9sC3u6KGUtKy8e7OAgAhejjAjGwGlsOW-6GzXSAg.AH6URogq2rS1dOh28fT1P89rnccC71y8L5uY3jg9wB4g.JPEG.jjini_land/FB_IMG_1430747203165.jpg?type=w800" alt="성공적인 스터디를 기원하는 응원의 이미지" width="450px">
