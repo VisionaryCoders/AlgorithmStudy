@@ -19,10 +19,6 @@ function solution() {
   dp[0] = dp[1] = 0
   dp[2] = dp[3] = 1
 
-  const answer = {}
-  answer[0] = dp[1] = 0
-  answer[2]
-
   for (let i = 4; i < N + 1; i++) {
     dp[i] = dp[i - 1] + 1
 
@@ -33,6 +29,30 @@ function solution() {
       dp[i] = Math.min(dp[i / 3] + 1, dp[i])
     }
   }
+
+  console.log(dp[N])
+
+  let num = N
+  let answer = [N]
+
+  while (num !== 1) {
+    let x, y, z
+    y = 99999
+    z = 99999
+
+    x = dp[num - 1]
+    if (num % 2 === 0) y = dp[num / 2]
+    if (num % 3 === 0) z = dp[num / 3]
+
+    let m = Math.min(x, Math.min(y, z))
+    if (m === x) num = num - 1
+    else if (m === y) num = num / 2
+    else num = num / 3
+
+    answer.push(num)
+  }
+
+  console.log(answer.join(' '))
 }
 
 solution()
